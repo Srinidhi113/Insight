@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>InsightFlow · Discussion intelligence</title><link rel="stylesheet" href="/static/style.css"><script src="/static/app.js" defer></script></head>
+<body>
+<header><a class="brand" href="/">◈ <span>InsightFlow</span></a><span class="tag">DISCUSSION INTELLIGENCE</span><a href="/docs" target="_blank" rel="noopener">API docs ↗</a></header>
+<main>
+<section class="hero"><div class="eyebrow">FROM CONVERSATION TO CLARITY</div><h1>Find the themes.<br><span>Keep the context.</span></h1><p>Turn long discussions into topic summaries, with the source evidence always one click away.</p></section>
+<div class="workspace">
+<section class="panel input-panel"><div class="panel-heading"><h2><span class="step">01</span> Your discussion</h2><button id="example" class="text-button">Load example</button></div>
+<div class="input-actions"><label class="file-label" for="file">↑ Import TXT, MD or JSON</label><input id="file" type="file" accept=".txt,.md,.json"><span id="input-count">0 characters</span></div>
+<label class="sr-only" for="discussion">Discussion text or JSON</label><textarea id="discussion" placeholder="Paste a Reddit thread, forum conversation, or structured JSON here…" maxlength="250000" spellcheck="false"></textarea>
+<div class="configuration"><label>Processing mode<select id="mode"><option value="ai">MPNet + DistilBART</option><option value="demo">Offline demo · no model download</option></select></label><label>Topics<input id="num-topics" type="number" min="1" max="12" value="3"></label></div>
+<p class="hint" id="mode-hint">AI mode downloads the models on first use. CPU inference can take several minutes.</p>
+<details class="advanced"><summary>Pipeline settings</summary><div class="configuration"><label>Chunk token limit<input id="chunk-tokens" type="number" value="700" min="64" max="900"></label><label>Summary token target<input id="summary-tokens" type="number" value="200" min="40" max="256"></label></div><label class="check"><input type="checkbox" id="refinement" checked> Semantic duplicate refinement</label><label class="check"><input type="checkbox" id="second-pass" checked> Second-pass summary compression</label><label class="threshold">Duplicate similarity threshold <input type="number" id="threshold" min="0.75" max="1" step="0.01" value="0.92"></label></details>
+<button id="analyze" class="primary">Analyze discussion <span>↗</span></button>
+<div id="status" role="status" aria-live="polite">Ready when you are.</div>
+</section>
+<section class="results-area"><div class="panel-heading results-heading"><h2><span class="step">02</span> The big picture</h2><div id="export-actions" hidden><a id="export-json" class="small-button">JSON ↓</a><a id="export-text" class="small-button">Text ↓</a></div></div>
+<div id="results"><div class="empty"><div class="orb">◈</div><h3>Every discussion has a story.</h3><p>Add your conversation and discover its main themes, concise summaries, and supporting sentences.</p><div class="flow"><span>Clean</span><span>Group</span><span>Summarize</span></div></div></div>
+</section></div>
+<section class="history panel"><div class="panel-heading"><h2>Recent analyses</h2><button id="refresh" class="text-button">Refresh ↻</button></div><p class="hint">Saved on this computer. Open a result to inspect or export it.</p><div id="history"></div></section>
+<footer><span>InsightFlow · Local discussion analysis</span><span>English input · No API key required</span></footer>
+</main></body></html>

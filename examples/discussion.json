@@ -1,0 +1,8 @@
+{
+  "title": "How should our team work?",
+  "comments": [
+    {"id": "c1", "body": "Remote work reduces commuting time and makes flexible scheduling possible. Distributed teams need clear documentation and regular planning.", "replies": [{"id": "c2", "body": "New employees benefit from mentoring sessions and structured onboarding. Video calls help remote colleagues build relationships."}]},
+    {"id": "c3", "body": "Our laptops need more memory to run local containers. Better battery life would help developers working away from an outlet."},
+    {"id": "c4", "body": "The city should increase bus frequency and build protected bicycle lanes. Reliable transport reduces the cost of commuting."}
+  ]
+}
